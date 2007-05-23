@@ -1,5 +1,5 @@
 %define name sturmbahnfahrer
-%define version	1.3
+%define version	1.4
 %define rel 1
 %define release %mkrel %rel
 
@@ -30,7 +30,7 @@ Sturmbahnfahrer is a game by Bram Stolk.
 
 %prep
 
-%setup -q
+%setup -q -n %{name}-%{version}/src-%{name}
 # use shared ode
 perl -pi -e "s#\Q\$(ODEPREFIX)/lib/libode.a\E#-lode#" Makefile
 # x86_64
