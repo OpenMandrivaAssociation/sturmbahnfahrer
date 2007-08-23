@@ -1,5 +1,6 @@
 %define name sturmbahnfahrer
-%define version	1.4
+%define oname stormbaancoureur
+%define version	1.5.2
 %define rel 1
 %define release %mkrel %rel
 
@@ -7,7 +8,7 @@ Summary: Simulated obstacle course for automobiles
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source: http://www.stolk.org/sturmbahnfahrer/download/%{name}-%{version}.tar.bz2
+Source: http://www.stolk.org/sturmbahnfahrer/download/%{oname}-%{version}.tar.bz2
 Group: Games/Arcade
 License: GPL
 URL: http://www.sturmbahnfahrer.com/
@@ -30,7 +31,7 @@ Sturmbahnfahrer is a game by Bram Stolk.
 
 %prep
 
-%setup -q -n %{name}-%{version}/src-%{name}
+%setup -q -n %{oname}-%{version}/src-%{oname}
 # use shared ode
 perl -pi -e "s#\Q\$(ODEPREFIX)/lib/libode.a\E#-lode#" Makefile
 # x86_64
@@ -60,30 +61,18 @@ install -m 644 %{name}-32.png %{buildroot}/%{_iconsdir}/%{name}.png
 install -d -m 755 %{buildroot}/%{_liconsdir}
 install -m 644 %{name}-48.png %{buildroot}/%{_liconsdir}/%{name}.png
 
-#old debian-type menu
-install -d -m 755 %{buildroot}%{_menudir}
-cat > %{buildroot}%{_menudir}/%{name} << EOF
-?package(%name): needs="x11" \
-section="More Applications/Games/Arcade" \
-title="Sturmbahnfahrer" \
-longtitle="%{Summary}" \
-command="%{_gamesbindir}/%{name}" \
-icon="%{name}.png" \
-xdg="true"
-EOF
-
 #xdg menu
 install -d -m 755 %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=Sturmbahnfahrer
-Comment=%{Summary}
+Comment=Simulated obstacle course for automobiles
 Exec=%{_gamesbindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=Game;ArcageGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+Categories=Game;ArcageGame;
 EOF
 
 %post
@@ -100,11 +89,7 @@ EOF
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
-%{_menudir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-
-
