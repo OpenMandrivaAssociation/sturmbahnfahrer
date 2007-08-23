@@ -35,7 +35,7 @@ Sturmbahnfahrer is a game by Bram Stolk.
 %setup -q -n %{oname}-%{version}/src-%{oname}
 %patch -p0
 # x86_64
-perl -pi -e "s#/lib#/%{_lib}#g" Makefile
+perl -pi -e "s#LIBDIRNAME=lib#LIBDIRNAME=%{_lib}#g" Makefile
 
 # creates icons
 convert -scale 16x16 images/engine.tga %{name}-16.png
