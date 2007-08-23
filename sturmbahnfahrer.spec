@@ -9,6 +9,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source: http://www.stolk.org/sturmbahnfahrer/download/%{oname}-%{version}.tar.bz2
+Patch: sturmbahnfahrer-1.5.2-use-shared-obe.patch
 Group: Games/Arcade
 License: GPL
 URL: http://www.sturmbahnfahrer.com/
@@ -32,8 +33,7 @@ Sturmbahnfahrer is a game by Bram Stolk.
 %prep
 
 %setup -q -n %{oname}-%{version}/src-%{oname}
-# use shared ode
-perl -pi -e "s#\Q\$(ODEPREFIX)/lib/libode.a\E#-lode#" Makefile
+%patch -p0
 # x86_64
 perl -pi -e "s#/lib#/%{_lib}#g" Makefile
 
