@@ -47,10 +47,6 @@ convert -scale 48x48 images/engine.tga %{name}-48.png
 
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}%{_gamesbindir}
-install -d -m 755 %{buildroot}%{_gamesdatadir}/%{name}/images
-install -d -m 755 %{buildroot}%{_gamesdatadir}/%{name}/sounds
-install -d -m 755 %{buildroot}%{_gamesdatadir}/%{name}/models
 %makeinstall DESTDIR=%{buildroot}
 
 #icons
@@ -68,7 +64,7 @@ cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 Encoding=UTF-8
 Name=Sturmbahnfahrer
 Comment=Simulated obstacle course for automobiles
-Exec=%{_gamesbindir}/%{name}
+Exec=%{_gamesbindir}/%{oname}
 Icon=%{name}
 Terminal=false
 Type=Application
@@ -83,9 +79,9 @@ EOF
 
 %files
 %defattr(-,root,root)
-%doc JOYSTICKS README TODO sturmbahnfahrer.keys.example
-%attr(0755,root,games) %{_gamesbindir}/%{name}
-%{_gamesdatadir}/%{name}
+%doc JOYSTICKS README TODO *.keys.example
+%attr(0755,root,games) %{_gamesbindir}/*
+%{_gamesdatadir}/stormbaancoureur
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
