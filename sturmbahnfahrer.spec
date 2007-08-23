@@ -9,7 +9,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source: http://www.stolk.org/sturmbahnfahrer/download/%{oname}-%{version}.tar.bz2
-Patch: sturmbahnfahrer-1.5.2-use-shared-obe.patch
+Patch: sturmbahnfahrer-1.5.2-use-shared-ode.patch
 Group: Games/Arcade
 License: GPL
 URL: http://www.sturmbahnfahrer.com/
