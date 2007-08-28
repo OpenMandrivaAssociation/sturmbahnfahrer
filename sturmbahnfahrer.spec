@@ -61,7 +61,6 @@ install -m 644 %{name}-48.png %{buildroot}/%{_liconsdir}/%{name}.png
 install -d -m 755 %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Sturmbahnfahrer
 Comment=Simulated obstacle course for automobiles
 Exec=%{_gamesbindir}/%{oname}
