@@ -1,6 +1,6 @@
 %define name sturmbahnfahrer
 %define oname stormbaancoureur
-%define version	1.5.2
+%define version	1.5.3
 %define rel 1
 %define release %mkrel %rel
 
@@ -21,10 +21,10 @@ BuildRequires: alsa-lib-devel
 
 %description
 Sturmbahnfahrer... for expert drivers only.
-If you want to master it, try to have the laws of physics work with you, not 
+If you want to master it, try to have the laws of physics work with you, not
 against you.
 
-Enabling technologies behind Sturmbahnfahrer include the Open Dynamics Engine 
+Enabling technologies behind Sturmbahnfahrer include the Open Dynamics Engine
 and the portable game library known as PLIB.
 
 Sturmbahnfahrer is a game by Bram Stolk.
