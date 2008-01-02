@@ -13,6 +13,7 @@ Patch: sturmbahnfahrer-1.5.2-use-shared-ode.patch
 Group: Games/Arcade
 License: GPL
 URL: http://www.sturmbahnfahrer.com/
+BuildRoot: %_tmppath/%{name}-build
 BuildRequires: ode-devel >= 0.6
 BuildRequires: plib-devel
 BuildRequires: ImageMagick
