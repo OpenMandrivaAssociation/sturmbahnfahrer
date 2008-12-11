@@ -16,7 +16,7 @@ URL: http://www.sturmbahnfahrer.com/
 BuildRoot: %_tmppath/%{name}-build
 BuildRequires: ode-devel >= 0.6
 BuildRequires: plib-devel
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 BuildRequires: mesaglut-devel
 BuildRequires: alsa-lib-devel
 
