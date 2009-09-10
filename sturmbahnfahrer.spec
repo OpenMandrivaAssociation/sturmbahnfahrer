@@ -1,7 +1,7 @@
 %define name sturmbahnfahrer
 %define oname stormbaancoureur
 %define version	1.5.3
-%define rel 1
+%define rel 2
 %define release %mkrel %rel
 
 Summary: Simulated obstacle course for automobiles
