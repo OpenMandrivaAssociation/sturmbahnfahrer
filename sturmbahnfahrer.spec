@@ -12,7 +12,7 @@ Source: http://www.stolk.org/sturmbahnfahrer/download/%{oname}-%{version}.tar.bz
 Patch: sturmbahnfahrer-1.5.2-use-shared-ode.patch
 Group: Games/Arcade
 License: GPL
-URL: http://www.sturmbahnfahrer.com/
+URL: https://www.sturmbahnfahrer.com/
 BuildRoot: %_tmppath/%{name}-build
 BuildRequires: ode-devel >= 0.6
 BuildRequires: plib-devel
